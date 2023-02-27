@@ -1,2 +1,3 @@
-export * from './test-utilts';
+export * from './test-utils';
+export * from './api-utils';
 
