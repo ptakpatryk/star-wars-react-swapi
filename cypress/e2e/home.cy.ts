@@ -9,18 +9,8 @@ describe('home page spec', () => {
     });
 
     it('should loader disappear when characters are fetched', () => {
-      cy.get('[data-testid=characters-list]');
+      cy.get('[data-testid=characters-list]').should('be.visible');
       cy.get('[data-testid=page-loader]').should('not.exist');
-    });
-
-    it('should planet of a character be loaded after showing the card', () => {
-      cy.get('[data-testid=characters-list]');
-      cy.get('[data-testid=page-loader]').should('not.exist');
-    });
-
-    it('should planet of a character be loaded after showing the card', () => {
-      cy.get('[data-testid=characters-list]');
-      cy.get('[data-testid=planet-loader]').should('be.visible');
     });
 
     it('should loader dissaper after planet loads', () => {
@@ -28,4 +18,12 @@ describe('home page spec', () => {
       cy.get('[data-testid=planet-loader]').should('not.exist');
     });
   });
+
+  context('user journey', () => {
+    it.only('character card should route to the character detail page', () => {
+      cy.get('[data-testid=character-item-btn]').first().click();
+      cy.location('pathname').should('contain', '/character');
+    });
+  });
+
 });

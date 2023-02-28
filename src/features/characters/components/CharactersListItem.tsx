@@ -34,7 +34,7 @@ export const CharactersListItem = ({ character }: CharactersListItemProps) => {
         <CharactersListItemPlanet planetId={homePlanetId} />
       </Box>
       <Box ml='auto'>
-        <IconButton as={Link} to={`character/${characterId}`} colorScheme='orange' aria-label='open character details' icon={<BiChevronRight size='32px' />} />
+        <IconButton as={Link} to={`character/${characterId}`} colorScheme='orange' aria-label='open character details' icon={<BiChevronRight size='32px' />} data-testid='character-item-btn' />
       </Box>
     </ListItem>
   );
