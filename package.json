@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "test": "jest"
+    "test": "jest",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
@@ -35,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "cypress": "^12.7.0",
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
     "jest-environment-jsdom": "^29.4.3",
