@@ -8,6 +8,7 @@ import { CharacterDetailItem } from '../components/CharacterDetailItem';
 import { CharactersListItemPlanet } from '../components/CharactersListItemPlanet';
 import { CharactersFilmsList } from '../components/CharactersFilmsList';
 import { getIdFromUrl } from '@/utils';
+import { CharacterEditableDetail } from '../components/CharacterEditableDetail';
 
 export const CharacterDetailsPage = () => {
   const { characterId } = useParams() as { characterId: string };
@@ -43,8 +44,8 @@ export const CharacterDetailsPage = () => {
       </Text>
       <CharacterDetailItem title='hair_color' info={characterData.hair_color} />
       <CharacterDetailItem title='eye_color' info={characterData.eye_color} />
-      <CharacterDetailItem title='gender' info={characterData.gender} />
-      <CharacterDetailItem title='height' info={characterData.height} />
+      <CharacterEditableDetail title='gender' defaultInfo={characterData.gender} />
+      <CharacterEditableDetail title='height' defaultInfo={characterData.height} inputType='number' />
       <CharacterDetailItem title='mass' info={characterData.mass} />
       <CharactersListItemPlanet planetId={homePlanetId} />
       <CharactersFilmsList
