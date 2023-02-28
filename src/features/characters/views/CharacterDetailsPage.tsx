@@ -1,6 +1,7 @@
 
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Box, Divider, Flex, Text } from '@chakra-ui/react';
+import { ArrowLeftIcon } from '@chakra-ui/icons';
 import { BeatLoader } from 'react-spinners';
 
 import { useCharacterDetails } from '../api/character';
@@ -35,6 +36,7 @@ export const CharacterDetailsPage = () => {
 
   return (
     <Box>
+      <Link to={'..'}><ArrowLeftIcon width={2} /> Go back</Link>
       <Text as='h2' fontWeight='bold' fontSize='3xl'>
         {characterData.name}
       </Text>
