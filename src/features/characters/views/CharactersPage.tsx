@@ -27,7 +27,7 @@ export const CharactersPage = () => {
     <div>
       {isLoading && (
         <Flex justifyContent='center' my='4'>
-          <BeatLoader color='white' />
+          <BeatLoader color='white' data-testid='page-loader' />
         </Flex>
       )}
       <CharactersList characters={charactersData?.results || []} />

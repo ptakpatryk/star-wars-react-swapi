@@ -24,6 +24,7 @@ export const CharactersListItem = ({ character }: CharactersListItemProps) => {
       py='2'
       borderRadius='md'
       _hover={{ background: 'gray.900' }}
+      data-testid='character-item'
     >
       <Box>
         <Text as='h3' fontSize='lg' fontWeight='bold'>{character.name}</Text>

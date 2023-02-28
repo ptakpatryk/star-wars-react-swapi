@@ -25,7 +25,7 @@ export const CharacterDetailsPage = () => {
 
   if (isLoading) {
     return (
-      <Flex justifyContent='center' my='4'>
+      <Flex justifyContent='center' my='4' data-testid='character-loader'>
         <BeatLoader color='white' />
       </Flex>
     );
@@ -36,7 +36,7 @@ export const CharacterDetailsPage = () => {
 
   return (
     <Box>
-      <Link to={'..'}><ArrowLeftIcon width={2} /> Go back</Link>
+      <Link to={'..'}><ArrowLeftIcon width={2} data-testid='back-btn' /> Go back</Link>
       <Text as='h2' fontWeight='bold' fontSize='3xl'>
         {characterData.name}
       </Text>

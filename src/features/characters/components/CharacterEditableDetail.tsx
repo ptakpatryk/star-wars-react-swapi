@@ -1,26 +1,7 @@
-import { CheckIcon, CloseIcon, EditIcon } from '@chakra-ui/icons';
-import { Box, ButtonGroup, Editable, EditableInput, EditablePreview, Flex, IconButton, Input, Text, useEditableControls } from '@chakra-ui/react';
+import { Editable, EditableInput, EditablePreview, Flex, Input, Text, } from '@chakra-ui/react';
 import { ICharacter } from '../types';
+import { CharacterEditableDetailContols } from './CharacterEditableDetailContols';
 
-function EditableControls() {
-  const {
-    isEditing,
-    getSubmitButtonProps,
-    getCancelButtonProps,
-    getEditButtonProps,
-  } = useEditableControls();
-
-  return isEditing ? (
-    <ButtonGroup alignItems='center' size='xs'>
-      <IconButton icon={<CheckIcon />} {...getSubmitButtonProps()} aria-label='save' />
-      <IconButton icon={<CloseIcon />} {...getCancelButtonProps()} aria-label='cancel' />
-    </ButtonGroup>
-  ) : (
-    <Box>
-      <IconButton size='xs' icon={<EditIcon />} {...getEditButtonProps()} aria-label='edit' />
-    </Box>
-  );
-}
 
 type CharacterEditableDetailProps = {
   title: keyof ICharacter;
@@ -40,10 +21,10 @@ export const CharacterEditableDetail = ({ title, defaultInfo, inputType = 'text'
         defaultValue={defaultInfo}
         isPreviewFocusable={false}
       >
-        <EditablePreview />
+        <EditablePreview data-testid={`${title}-value`} />
         {/* NOTE: with a little bit more time I'd allow to pass custom input for example for gender it would make more sense to have dropdown or radio input instead of text field */}
         <Input as={EditableInput} type={inputType} name={`${title} input`} />
-        <EditableControls />
+        <CharacterEditableDetailContols name={title} />
       </Editable>
     </Flex>
   );

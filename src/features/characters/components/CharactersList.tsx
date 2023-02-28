@@ -16,6 +16,7 @@ export const CharactersList = ({ characters }: CharactersListProps) => {
         xl: 'repeat(3, 1fr)' 
       }}
       gridGap='3'
+      data-testid='characters-list'
     >
       {characters.map(charItem => {
         return (
