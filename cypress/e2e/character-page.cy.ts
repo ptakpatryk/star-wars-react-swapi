@@ -26,7 +26,7 @@ describe('character page spec', () => {
       cy.get('[data-testid="gender-value"]').should('contain.text', NEW_GENDER);
     });
 
-    it.only('should be edit to change height only passing number', () => {
+    it('should be edit to change height only passing number', () => {
       const INCORECT_HEIGHT = 'tall';
       const NEW_HEIGHT = '12312';
 
