@@ -42,7 +42,7 @@ const renderComponent = () => {
 };
 
 describe('Layout', () => {
-  test('should render with route outlet', () => {
+  it('should render with route outlet', () => {
     renderComponent();
 
     const childrenText = screen.getByText(ROUTER_OUTLET_COMPONENT_TEXT);
@@ -50,7 +50,7 @@ describe('Layout', () => {
     expect(childrenText).toBeInTheDocument();
   });
 
-  test('should render with navigation', () => {
+  it('should render with navigation', () => {
     renderComponent();
 
     const childrenText = screen.getByText(NAVIGATION_COMPONENT_TEXT);
@@ -58,7 +58,7 @@ describe('Layout', () => {
     expect(childrenText).toBeInTheDocument();
   });
 
-  test('should render with Logo', () => {
+  it('should render with Logo', () => {
     renderComponent();
 
     const childrenText = screen.getByText(LOGO_COMPONENT_TEXT);

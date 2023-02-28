@@ -10,15 +10,15 @@ const renderComponent = () => {
   );
 };
 
-describe.only('Logo', () => {
-  test('should render logo', () => {
+describe('Logo', () => {
+  it('should render logo', () => {
     renderComponent();
 
     const logo = screen.getByAltText(/logo/);
     expect(logo).toBeInTheDocument();
   });
 
-  test('expect logo to be an anchor tag that links to the homepage', () => {
+  it('expect logo to be an anchor tag that links to the homepage', () => {
     renderComponent();
 
     const logoLink = screen.getByRole('link');

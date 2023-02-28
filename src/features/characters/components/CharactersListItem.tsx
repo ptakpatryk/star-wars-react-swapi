@@ -11,7 +11,6 @@ type CharactersListItemProps = {
 }
 
 export const CharactersListItem = ({ character }: CharactersListItemProps) => {
-  // TODO: parse it the way sounded way
   const characterId = getIdFromUrl(character.url);
   const homePlanetId = getIdFromUrl(character.homeworld);
 

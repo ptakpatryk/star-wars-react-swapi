@@ -27,36 +27,36 @@ const renderComponent = ({ disabled = false }) => {
   );
 };
 
-describe.only('NavigationItem', () => {
-  test('should render navigation item with correct name', () => {
+describe('NavigationItem', () => {
+  it('should render navigation item with correct name', () => {
     renderComponent({});
 
     const navItemName = screen.getByText(ITEM_NAME);
     expect(navItemName).toBeInTheDocument();
   });
 
-  test('should render navigation item with correct icon', () => {
+  it('should render navigation item with correct icon', () => {
     renderComponent({});
 
     const iconElement = screen.getByText(CUSTOM_ICON_TEXT);
     expect(iconElement).toBeInTheDocument();
   });
 
-  test('should navigation item have a correct path', () => {
+  it('should navigation item have a correct path', () => {
     renderComponent({});
 
     const navItem = screen.getByText(ITEM_NAME);
     expect(navItem).toHaveAttribute('href', CUSTOM_PATH);
   });
 
-  test('should navigation item be enabled by default', () => {
+  it('should navigation item be enabled by default', () => {
     renderComponent({});
 
     const navItem = screen.getByText(ITEM_NAME);
     expect(navItem).not.toHaveAttribute('aria-disabled');
   });
 
-  test('should navigation item be disabled according to props', () => {
+  it('should navigation item be disabled according to props', () => {
     renderComponent({ disabled: true });
 
     const navItem = screen.getByText(ITEM_NAME);

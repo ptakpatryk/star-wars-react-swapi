@@ -15,7 +15,7 @@ beforeEach(() => {
 });
 
 describe('Pagination', () => {
-  test('should render correctly', () => {
+  it('should render correctly', () => {
     renderComponent({});
     const nextBtn = screen.getByRole('button', { name: NEXT_LABEL });
     const prevBtn = screen.getByRole('button', { name: PREV_LABEL });
@@ -24,7 +24,7 @@ describe('Pagination', () => {
     expect(prevBtn).toBeInTheDocument();
   });
 
-  test('should prev button be disabled according to props', () => {
+  it('should prev button be disabled according to props', () => {
     renderComponent({ isPrevDisabled: true });
 
     const prevBtn = screen.getByRole('button', { name: PREV_LABEL });
@@ -32,7 +32,7 @@ describe('Pagination', () => {
     expect(prevBtn).toBeDisabled();
   });
 
-  test('should next button be disabled according to props', () => {
+  it('should next button be disabled according to props', () => {
     renderComponent({ isNextDisabled: true });
 
     const nextBtn = screen.getByRole('button', { name: NEXT_LABEL });
@@ -41,7 +41,7 @@ describe('Pagination', () => {
   });
 
   describe('events', () => {
-    test('should prev button click emit click event up', async () => {
+    it('should prev button click emit click event up', async () => {
       renderComponent({});
 
       const prevBtn = screen.getByRole('button', { name: PREV_LABEL });
@@ -51,7 +51,7 @@ describe('Pagination', () => {
       expect(onPrevMock).toBeCalledTimes(1);
     });
 
-    test('should next button click emit click event up', async () => {
+    it('should next button click emit click event up', async () => {
       renderComponent({});
 
       const nextBtn = screen.getByRole('button', { name: NEXT_LABEL });
