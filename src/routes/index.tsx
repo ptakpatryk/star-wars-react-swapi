@@ -1,14 +1,14 @@
 import { Layout } from '../components/Layout';
 import { createBrowserRouter } from 'react-router-dom';
 
-/* import { ErrorFallback, Layout } from '@/components'; */
 import { charactersRoutes } from '@/features/characters';
+import { ErrorFallback } from '@/components/ErrorFallback';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    /* errorElement: <ErrorFallback />, */
+    errorElement: <ErrorFallback />,
     children: [
       ...charactersRoutes,
       {
