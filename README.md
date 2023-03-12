@@ -34,19 +34,3 @@ To check javascript linting rules.
 ### `yarn lint:fix`
 
 To format codebase.
-
-## Things to consider if not time restictions
-
-- I'd definitely spend more time on unit tests, as I covered only areas in the shared components
-- Cover more using cypress
-- I'd probably mock endpoints as this is third-party API but I presumed that this is the project's backend that we have full control on
-- Add integration tests for views components
-- if comes to field editing I'd probably make it slightly smarter, maybe make it hit api mocked with MSW
-- I'd parse all the requests coming from the swapi with zod to assure type safety
-- I'd extract out request error components
-
-Notes:
-Please search for `NOTE:` in the project to find some comments where I provide some more information about my thinking process.
-I think I spent roughly 3-3.5h on this project If I were to start again I'd probably focus less on the UI (and getting that star wars svg logo) and put some more effort into testing.
-I've also added additional feature of pagination as I thought it's a quick win (although that took some of a testing time 😢)
-I hope I provided enough evidence that I'm capable of using FE tools.
