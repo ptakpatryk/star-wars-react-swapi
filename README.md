@@ -1,6 +1,6 @@
 # Star Wars React Swapi
 
-[![Run Unit Test](https://github.com/ptakpatryk/star-wars-react-swapi/actions/workflows/unit-test.yml/badge.svg)](https://github.com/ptakpatryk/star-wars-react-swapi/actions/workflows/unit-test.yml)
+[![Run Unit Test](https://github.com/ptakpatryk/star-wars-react-swapi/actions/workflows/unit-test.yml/badge.svg?branch=main)](https://github.com/ptakpatryk/star-wars-react-swapi/actions/workflows/unit-test.yml)
 
 ## Getting Started
 
