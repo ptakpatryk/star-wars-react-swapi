@@ -10,36 +10,57 @@ jobs:
   unit-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Checkout repository 🧐
         uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
-      - name: Cache packages
-        uses: actions/cache@v3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+        shell: 'bash'
+      - uses: actions/cache@v3
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install --frozen-lockfile
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            node_modules
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-
+      - name: Install dependencies
+        run: |
+          if ${{ steps.yarn-cache.outputs.cache-hit }} = 'true'
+          then
+            echo "Cache hit - skipping dependency installation"
+          else
+            yarn install --frozen-lockfile
+          fi
       - run: yarn test
+
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Checkout repository 🧐
         uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
-      - name: Cache packages
-        uses: actions/cache@v3
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+        shell: 'bash'
+      - uses: actions/cache@v3
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install --frozen-lockfile
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            node_modules
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-
+      - name: Install dependencies
+        run: |
+          if ${{ steps.yarn-cache.outputs.cache-hit }} = 'true'
+          then
+            echo "Cache hit - skipping dependency installation"
+          else
+            yarn install --frozen-lockfile
+          fi
       - run: yarn build
