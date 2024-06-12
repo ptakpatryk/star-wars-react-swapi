@@ -13,8 +13,12 @@ export const router = createBrowserRouter([
       ...charactersRoutes,
       {
         path: '/planets',
-        element: <div>{/* TODO: get planets routes when working on planets page */}</div>
+        element: (
+          <div>
+            {/* TODO: get planets routes when working on planets page */}
+          </div>
+        ),
       },
-    ]
+    ],
   },
 ]);

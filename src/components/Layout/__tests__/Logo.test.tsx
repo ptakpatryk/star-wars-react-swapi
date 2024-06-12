@@ -1,13 +1,10 @@
-
 import { renderWithRouter, screen } from '@utils';
 import { Logo } from '../Logo';
 
 jest.mock('../../../assets/star-wars-logo.svg', () => 'LOGO_SRC_MOCK.png');
 
 const renderComponent = () => {
-  return renderWithRouter(
-    <Logo />
-  );
+  return renderWithRouter(<Logo />);
 };
 
 describe('Logo', () => {

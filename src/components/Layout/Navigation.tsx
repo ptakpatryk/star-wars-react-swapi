@@ -11,33 +11,37 @@ export type IMenuItem = {
   path: string;
   icon: IconType;
   disabled?: boolean;
-}
+};
 
 const navigationItems: IMenuItem[] = [
   {
     id: 0,
     name: 'Characters',
     path: '/',
-    icon: MdOutlinePeopleAlt
+    icon: MdOutlinePeopleAlt,
   },
   {
     id: 1,
     name: 'Planets',
     path: '/planets',
     icon: IoIosPlanet,
-    disabled: true
-  }
+    disabled: true,
+  },
 ];
 
 export const Navigation = () => {
   return (
-    <Tabs colorScheme='yellow'>
+    <Tabs colorScheme="yellow">
       <TabList>
-        {
-          navigationItems.map(navItem => (
-            <NavigationItem key={navItem.id} name={navItem.name} path={navItem.path} icon={navItem.icon} disabled={navItem?.disabled}/>
-          ))
-        }
+        {navigationItems.map((navItem) => (
+          <NavigationItem
+            key={navItem.id}
+            name={navItem.name}
+            path={navItem.path}
+            icon={navItem.icon}
+            disabled={navItem?.disabled}
+          />
+        ))}
       </TabList>
     </Tabs>
   );

@@ -4,27 +4,22 @@ import { CharactersListItem } from './CharactersListItem';
 
 type CharactersListProps = {
   characters: ICharacter[];
-}
+};
 
 export const CharactersList = ({ characters }: CharactersListProps) => {
   return (
     <List
-      display='grid'
+      display="grid"
       gridTemplateColumns={{
         base: '1fr',
         md: 'repeat(2, 1fr)',
-        xl: 'repeat(3, 1fr)' 
+        xl: 'repeat(3, 1fr)',
       }}
-      gridGap='3'
-      data-testid='characters-list'
+      gridGap="3"
+      data-testid="characters-list"
     >
-      {characters.map(charItem => {
-        return (
-          <CharactersListItem
-            key={charItem.url}
-            character={charItem}
-          />
-        );
+      {characters.map((charItem) => {
+        return <CharactersListItem key={charItem.url} character={charItem} />;
       })}
     </List>
   );

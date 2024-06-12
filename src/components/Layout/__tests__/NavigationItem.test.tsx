@@ -6,7 +6,7 @@ import { NavigationItem } from '../NavigationItem';
 jest.mock('../../../assets/star-wars-logo.svg', () => 'LOGO_SRC_MOCK.png');
 
 const CUSTOM_ICON_TEXT = 'CUSTOM ICON';
-const CUSTOM_ICON_ELEMENT = (() => (<div>{CUSTOM_ICON_TEXT}</div>)) as IconType;
+const CUSTOM_ICON_ELEMENT = (() => <div>{CUSTOM_ICON_TEXT}</div>) as IconType;
 const ITEM_NAME = 'NAV ITEM NAME';
 const CUSTOM_PATH = '/custom-path/123';
 
@@ -23,7 +23,7 @@ const renderComponent = ({ disabled = false }) => {
           />
         </TabList>
       </Tabs>
-    </div>
+    </div>,
   );
 };
 

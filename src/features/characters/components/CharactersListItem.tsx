@@ -7,8 +7,8 @@ import { type ICharacter } from '../types';
 import { CharactersListItemPlanet } from './CharactersListItemPlanet';
 
 type CharactersListItemProps = {
-  character: ICharacter
-}
+  character: ICharacter;
+};
 
 export const CharactersListItem = ({ character }: CharactersListItemProps) => {
   const characterId = getIdFromUrl(character.url);
@@ -16,25 +16,36 @@ export const CharactersListItem = ({ character }: CharactersListItemProps) => {
 
   return (
     <ListItem
-      display='flex'
-      alignItems='center'
-      bg='gray.800'
-      px='4'
-      py='2'
-      borderRadius='md'
+      display="flex"
+      alignItems="center"
+      bg="gray.800"
+      px="4"
+      py="2"
+      borderRadius="md"
       _hover={{ background: 'gray.900' }}
-      data-testid='character-item'
+      data-testid="character-item"
     >
       <Box>
-        <Text as='h3' fontSize='lg' fontWeight='bold'>{character.name}</Text>
+        <Text as="h3" fontSize="lg" fontWeight="bold">
+          {character.name}
+        </Text>
         <Text>
-          <Text as='span' fontWeight='semibold' color='whiteAlpha.700'>Gender: </Text>
+          <Text as="span" fontWeight="semibold" color="whiteAlpha.700">
+            Gender:{' '}
+          </Text>
           {character.gender}
         </Text>
         <CharactersListItemPlanet planetId={homePlanetId} />
       </Box>
-      <Box ml='auto'>
-        <IconButton as={Link} to={`character/${characterId}`} colorScheme='orange' aria-label='open character details' icon={<BiChevronRight size='32px' />} data-testid='character-item-btn' />
+      <Box ml="auto">
+        <IconButton
+          as={Link}
+          to={`character/${characterId}`}
+          colorScheme="orange"
+          aria-label="open character details"
+          icon={<BiChevronRight size="32px" />}
+          data-testid="character-item-btn"
+        />
       </Box>
     </ListItem>
   );

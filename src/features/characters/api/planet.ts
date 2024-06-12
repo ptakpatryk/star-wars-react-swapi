@@ -10,7 +10,7 @@ export const getPlanet = async (planetId: number): Promise<IPlanet> => {
 };
 
 type usePlanetOptions = {
-  planetId: number,
+  planetId: number;
   config?: UseQueryOptions<IPlanet>;
 };
 

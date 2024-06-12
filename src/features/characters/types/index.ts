@@ -1,4 +1,3 @@
-
 import { ISwapiPaginatedResponse } from '@/types';
 
 export type ICharacter = {
@@ -18,7 +17,7 @@ export type ICharacter = {
   created: string;
   edited: string;
   url: string;
-}
+};
 
 export type ICharactersResponse = ISwapiPaginatedResponse<ICharacter>;
 
@@ -32,12 +31,12 @@ export type IPlanet = {
   terrain: string;
   surface_water: string;
   population: string;
-  residents: string[],
-  films: string[],
+  residents: string[];
+  films: string[];
   created: string;
   edited: string;
   url: string;
-}
+};
 
 export type IFilm = {
   title: string;
@@ -54,4 +53,4 @@ export type IFilm = {
   created: string;
   edited: string;
   url: string;
-}
+};

@@ -4,8 +4,8 @@ import starWarsLogo from '../../assets/star-wars-logo.svg';
 
 export const Logo = () => {
   return (
-    <Box maxW='28'>
-      <Link to='/' data-testid='logo'>
+    <Box maxW="28">
+      <Link to="/" data-testid="logo">
         <img src={starWarsLogo} alt="StarWars logo" />
       </Link>
     </Box>

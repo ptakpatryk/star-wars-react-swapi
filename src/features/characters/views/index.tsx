@@ -6,10 +6,10 @@ import { CharacterDetailsPage } from './CharacterDetailsPage';
 export const charactersRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <CharactersPage />
+    element: <CharactersPage />,
   },
   {
     path: '/character/:characterId',
-    element: <CharacterDetailsPage />
+    element: <CharacterDetailsPage />,
   },
 ];
