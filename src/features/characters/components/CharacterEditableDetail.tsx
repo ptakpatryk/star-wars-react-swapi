@@ -1,22 +1,39 @@
-import { Editable, EditableInput, EditablePreview, Flex, Input, Text, } from '@chakra-ui/react';
+import {
+  Editable,
+  EditableInput,
+  EditablePreview,
+  Flex,
+  Input,
+  Text,
+} from '@chakra-ui/react';
 import { ICharacter } from '../types';
 import { CharacterEditableDetailContols } from './CharacterEditableDetailContols';
-
 
 type CharacterEditableDetailProps = {
   title: keyof ICharacter;
   defaultInfo: string;
   inputType?: 'text' | 'number';
-}
+};
 
-export const CharacterEditableDetail = ({ title, defaultInfo, inputType = 'text' }: CharacterEditableDetailProps) => {
+export const CharacterEditableDetail = ({
+  title,
+  defaultInfo,
+  inputType = 'text',
+}: CharacterEditableDetailProps) => {
   const titleFormatted = title.replace('_', ' ');
 
   return (
-    <Flex alignItems='center' gap={1}>
-      <Text as='span' fontWeight='semibold' color='whiteAlpha.700' textTransform='capitalize'>{titleFormatted}: </Text>
+    <Flex alignItems="center" gap={1}>
+      <Text
+        as="span"
+        fontWeight="semibold"
+        color="whiteAlpha.700"
+        textTransform="capitalize"
+      >
+        {titleFormatted}:{' '}
+      </Text>
       <Editable
-        display='flex'
+        display="flex"
         gap={2}
         defaultValue={defaultInfo}
         isPreviewFocusable={false}
@@ -29,4 +46,3 @@ export const CharacterEditableDetail = ({ title, defaultInfo, inputType = 'text'
     </Flex>
   );
 };
-

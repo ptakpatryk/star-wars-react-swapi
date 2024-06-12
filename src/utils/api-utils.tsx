@@ -1,5 +1,5 @@
 export const parseApiResponse = async (res: Response) => {
-  if (!res.ok || (res.status < 200 || res.status > 399)) {
+  if (!res.ok || res.status < 200 || res.status > 399) {
     return Promise.reject(res);
   }
 
@@ -17,5 +17,5 @@ export const getIdFromUrl = (url: string) => {
     .at(-1) as string;
 
   // TODO: Here's something that I consider type unsefty and if I had more times I'd check for result to be NAN and return null
-  return parseInt(stringId); 
+  return parseInt(stringId);
 };

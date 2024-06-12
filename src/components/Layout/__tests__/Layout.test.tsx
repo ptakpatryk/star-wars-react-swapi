@@ -1,4 +1,8 @@
-import { createMemoryRouter, RouteObject, RouterProvider } from 'react-router-dom';
+import {
+  createMemoryRouter,
+  RouteObject,
+  RouterProvider,
+} from 'react-router-dom';
 import { render, screen } from '@utils';
 import { Layout } from '../Layout';
 
@@ -7,11 +11,11 @@ const LOGO_COMPONENT_TEXT = 'LOGO COMPONENT TEXT';
 const NAVIGATION_COMPONENT_TEXT = 'NAVIGATION COMPONENT TEXT';
 
 jest.mock('../Logo.tsx', () => ({
-  Logo: () => (<div>{LOGO_COMPONENT_TEXT}</div>)
+  Logo: () => <div>{LOGO_COMPONENT_TEXT}</div>,
 }));
 
 jest.mock('../Navigation.tsx', () => ({
-  Navigation: () => (<div>{NAVIGATION_COMPONENT_TEXT}</div>)
+  Navigation: () => <div>{NAVIGATION_COMPONENT_TEXT}</div>,
 }));
 
 const RouteOutletComponent = () => {
@@ -25,20 +29,18 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <RouteOutletComponent />
+        element: <RouteOutletComponent />,
       },
-    ]
+    ],
   },
 ];
 
 const router = createMemoryRouter(routes, {
-  initialEntries: ['/']
+  initialEntries: ['/'],
 });
 
 const renderComponent = () => {
-  return render(
-    <RouterProvider router={router} />
-  );
+  return render(<RouterProvider router={router} />);
 };
 
 describe('Layout', () => {
@@ -66,4 +68,3 @@ describe('Layout', () => {
     expect(childrenText).toBeInTheDocument();
   });
 });
-

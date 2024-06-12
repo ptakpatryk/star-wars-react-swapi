@@ -5,14 +5,19 @@ export type PaginationProps = {
   isPrevDisabled: boolean;
   onNext: () => void;
   onPrev: () => void;
-}
+};
 
 export const PREV_LABEL = 'Previous';
 export const NEXT_LABEL = 'Next';
 
-export const Pagination = ({ isNextDisabled, isPrevDisabled, onNext, onPrev }: PaginationProps) => {
+export const Pagination = ({
+  isNextDisabled,
+  isPrevDisabled,
+  onNext,
+  onPrev,
+}: PaginationProps) => {
   return (
-    <Flex justifyContent='space-between'>
+    <Flex justifyContent="space-between">
       <Button onClick={onPrev} isDisabled={isPrevDisabled}>
         {PREV_LABEL}
       </Button>

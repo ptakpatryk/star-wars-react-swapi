@@ -1,4 +1,3 @@
-
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { parseApiResponse } from '../../../utils';
 
@@ -11,7 +10,7 @@ export const getFilm = async (filmId: number): Promise<IFilm> => {
 };
 
 type useFilmOptions = {
-  filmId: number,
+  filmId: number;
   config?: UseQueryOptions<IFilm>;
 };
 

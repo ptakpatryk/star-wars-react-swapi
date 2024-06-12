@@ -1,12 +1,29 @@
 import { render, screen } from '../../../utils';
 import userEvent from '@testing-library/user-event';
-import { NEXT_LABEL, Pagination, PREV_LABEL, type PaginationProps } from '../Pagination';
+import {
+  NEXT_LABEL,
+  Pagination,
+  PREV_LABEL,
+  type PaginationProps,
+} from '../Pagination';
 
 const onNextMock = jest.fn();
 const onPrevMock = jest.fn();
 
-const renderComponent = ({ onNext = onNextMock, onPrev = onPrevMock, isNextDisabled= false, isPrevDisabled = false }: Partial<PaginationProps>) => {
-  return render(<Pagination onNext={onNext} onPrev={onPrev} isNextDisabled={isNextDisabled} isPrevDisabled={isPrevDisabled} />);
+const renderComponent = ({
+  onNext = onNextMock,
+  onPrev = onPrevMock,
+  isNextDisabled = false,
+  isPrevDisabled = false,
+}: Partial<PaginationProps>) => {
+  return render(
+    <Pagination
+      onNext={onNext}
+      onPrev={onPrev}
+      isNextDisabled={isNextDisabled}
+      isPrevDisabled={isPrevDisabled}
+    />,
+  );
 };
 
 beforeEach(() => {
